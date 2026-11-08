@@ -1,6 +1,9 @@
 # The goal of this file is to pad images which reach their borders to have blank pixels around them, matching the images in the old repo
+# also to convert them to webp, which I thought I'd do seperately but look! Pillow does it automatically!
 
-# TODO: figure out how much padding images currently have
+# old images were 539x539 and had 100px of padding on each side
+# Tiny's images are 250x250, and thus should have around 46.38px of padding on each side, which - forgive me - I'm rounding
+# thus the transparent base image is now 342, a number I shamefully got by googling 250+46+46
 
 
 from PIL import Image, ImageOps
