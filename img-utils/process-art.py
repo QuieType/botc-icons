@@ -5,8 +5,7 @@
 
 from PIL import Image, ImageOps
 
-oldTransparent = Image.open("transparent.png")
-oldTransparent.resize((300, 300)).save("transparentnew.webp")
-
-# this doesn't work bc .pad actually only pads if it changes the aspect ratio
-# idea: resize image, then paste on a transparent image instead
+old = Image.open("investigator-og.png")
+transparent = Image.open("transparent.webp")
+transparent.paste(old)
+transparent.save("investigator.webp")
