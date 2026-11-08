@@ -6,5 +6,8 @@
 from PIL import Image, ImageOps
 
 size = (300, 300)
-with Image.open("investigator.webp") as im:
-    ImageOps.pad(im, size, color="#f00").save("investigator_padded.webp")
+with Image.open("Screenshot_20261108_110048.png") as im:
+    ImageOps.pad(im, size, color="#ff0000").save("investigator_padded.webp")
+
+# this doesn't work bc .pad actually only pads if it changes the aspect ratio
+# idea: resize image, then paste on a transparent image instead
