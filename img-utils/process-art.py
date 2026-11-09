@@ -7,9 +7,13 @@
 # ^ higher education, everyone!
 
 
-from PIL import Image, ImageOps
+from PIL import Image
+from pathlib import Path
 
-old = Image.open("investigator-og.png")
-transparent = Image.open("transparent.webp")
-transparent.paste(old, (46, 46))
-transparent.save("investigator.webp")
+paths = Path("../TINY/").glob("*.png")
+for path in paths:
+    old = Image.open(path)
+    transparent = Image.open("transparent.webp")
+    transparent.paste(old, (46, 46))
+    transparent.save("WEBP/" + path.stem + ".webp")
+    print("Saved " + path.name + " as " + path.stem + ".webp")
