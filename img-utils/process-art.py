@@ -15,5 +15,5 @@ for path in paths:
     old = Image.open(path)
     transparent = Image.open("transparent.webp")
     transparent.paste(old, (46, 46))
-    transparent.save("WEBP/" + path.stem + ".webp")
+    transparent.save(path.stem + ".webp")
     print("Saved " + path.name + " as " + path.stem + ".webp")
