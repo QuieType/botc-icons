@@ -1,16 +1,15 @@
 # The goal of this file is to pad images which reach their borders to have blank pixels around them, matching the images in the old repo
 # also to convert them to webp, which I thought I'd do seperately but look! Pillow does it automatically!
 
-# old images were 539x539 and had 100px of padding on each side
-# Tiny's images are 250x250, and thus should have around 46.38px of padding on each side, which - forgive me - I'm rounding to 46
-# thus the transparent base image is now 342, a number I shamefully got by googling 250+46+46 (worse, I got the above comment's info from "100/539 is what/250")
-# ^ higher education, everyone!
-
+# Tiny's images are 250x250 with little to no padding
+# old images were 539x539 and had ~100 px of padding, but were inconsistent and seemed to have padding per image
+# with tiny's art I'm just going for 75 px of padding and calling it a day
+# sorry
 
 from PIL import Image
 from pathlib import Path
 
-paths = Path("../TINY/").glob("*.png")
+paths = Path("../PNG/").glob("investigator.png")
 for path in paths:
     old = Image.open(path)
     transparent = Image.open("transparent.webp")
