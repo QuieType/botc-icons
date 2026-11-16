@@ -9,10 +9,10 @@
 from PIL import Image
 from pathlib import Path
 
-paths = Path("../PNG/").glob("investigator.png")
+paths = Path("../PNG/").glob("*.png")
 for path in paths:
     old = Image.open(path)
-    transparent = Image.open("transparent.webp")
-    transparent.paste(old, (46, 46))
+    transparent = Image.open("transparent-400.webp")
+    transparent.paste(old, (75, 75))
     transparent.save(path.stem + ".webp")
     print("Saved " + path.name + " as " + path.stem + ".webp")
