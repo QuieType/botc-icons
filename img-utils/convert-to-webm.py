@@ -4,7 +4,7 @@
 from PIL import Image
 from pathlib import Path
 
-paths = Path("../../townsquare/src/assets/").glob("*.png")
+paths = Path(".").glob("*.png")
 
 for path in paths:
     Image.open(path).save(path.stem + ".webp")
